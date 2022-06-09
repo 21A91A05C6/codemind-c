@@ -1,12 +1,13 @@
 #include<stdio.h>
 #include<stdlib.h>
-void isfib(int n)
+void fib(int n)
 {
     int ans,a,b,c;
     if(n==0)
     {
         printf("0");
-        return;
+        return ;
+        
     }
     a=0;
     b=1;
@@ -16,12 +17,11 @@ void isfib(int n)
         a=b;
         b=c;
         c=a+b;
+        
     }
     if(abs(c-n)>abs(b-n))
     {
-        
         printf("%d",b);
-        
     }
     else if(abs(c-n)==abs(b-n))
     {
@@ -31,12 +31,10 @@ void isfib(int n)
     {
         printf("%d",c);
     }
-    
-    
 }
 int main()
 {
     int i,a,b,c,n;
     scanf("%d",&n);
-    isfib(n);
+    fib(n);
 }
