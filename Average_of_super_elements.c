@@ -1,49 +1,39 @@
 #include<stdio.h>
 int main()
 {
-  int n, arr[100],sum=0,items=0;
-  int skip[100]; // this is used for skipping already visited numbers
-
-  
-  double res;
-  scanf("%d",&n);
-  for(int i =0 ;i < n; ++i)
-  {
-    scanf("%d",&arr[i]);
-    skip[i] = 0;
-  }
-
-  for(int i=0; i<n; i++)
-  {
-    int count = 0;
-
-    if (skip[i]) continue;
-
-    for(int j=0; j<n; j++)
+    int n,arr[100],i,j,k=0,c=0;
+    float avg=0,sum=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
     {
-      if(arr[i]==arr[j])
-      {
-        count++;
-        skip[j] = 1;
-      }
+        scanf("%d",&arr[i]);
     }
-    if(arr[i] == count)
+    for(i=0;i<n;i++)
     {
-      sum += arr[i];
-      ++items;
+        c=0;
+        for(j=0;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                c++;
+                if(i!=j)
+                {
+                    arr[j]=0;
+                }
+            }
+        }
+        if(arr[i]==c)
+        {
+            sum+=arr[i];
+            k++;
+        }
     }
-  }
-
-  if (items == 0)
-  {
-    printf("-1");
-  }
-  else
-  {
-    res = ((double)sum)/items;
-    printf("%.2f",res);
-  }
-  printf("
-");
-  return 0;
+    if(k==0)
+    {
+        printf("-1");
+    }
+    else
+    {
+        printf("%.2f",sum/k);
+    }
 }
