@@ -2,13 +2,13 @@
 #include <math.h>
 int main()
 {
-  int n, temp, rev = 0,i, d;
+  int n, temp, rev=0, i, d;
   scanf("%d", &n);
   while (1)
   {
     n++;
-    temp = n;
-    while(temp>0)
+    temp= n;
+    while(temp)
     {
         d=temp%10;
         temp=temp/10;
@@ -17,9 +17,9 @@ int main()
     if (rev == n)
     {
       d = (int)sqrt(n);
-      for (i= 2; i <=d; i++)
+      for (i = 2; i <= d; i++)
       {
-        if (n%i== 0)
+        if (n%i == 0)
           break;
       }
       if (i == d+1)
