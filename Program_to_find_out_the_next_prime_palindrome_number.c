@@ -28,8 +28,7 @@ int main()
     rev = 0;
   }
 
-  printf("%d
-",n);
+  printf("%d",n);
 
   return 0;
 }
